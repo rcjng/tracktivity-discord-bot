@@ -7,7 +7,7 @@ A simple Discord bot written in Go that tracks activity and provides reports for
 - Describes the Tracktivity commands and their proper syntax and usage:
 ![Help command usage and output](docs/help_command.PNG)
 
-### 2. *tracktivity <mention>
+### 2. *tracktivity \<mention\>
 - Reports the Tracktivity profile of the mentioned user, if valid:
 ![Tracktivity command usage and output](docs/tracktivity_command.PNG)
 
@@ -67,5 +67,11 @@ A simple Discord bot written in Go that tracks activity and provides reports for
 ### 1. Multiple Server Compatability and Continuity
 The underlying data structures used to store Tracktivity data do not take into account the server. As a result, using the bot on multiple servers with common users can lead to misleading Tracktivity reports.
 
-### 2. Lack of Prior User and Server Data
+### 2. Lack of Prior User & Server Data
 Tracktivity only stores/tracks data acquired after the bot has joined and is not capable of grabbing user and server data and changes made before the bot joined the server. As a result, generating Tracktivity reports for users who were present in a server before the bot joined may lead to partially misleading or unknown data.
+
+## Improvements
+
+### 1. Database Storage
+Tracktivity currently uses maps, lists, and structs to store Tracktivity user data. For large-scale use, or even practical use, a remote database storage solution would be optimal, especially if the bot is used on numerous servers with large amounts of users.
+
